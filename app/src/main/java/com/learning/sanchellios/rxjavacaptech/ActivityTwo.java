@@ -1,9 +1,11 @@
 package com.learning.sanchellios.rxjavacaptech;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.renderscript.Double2;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.learning.sanchellios.rxjavacaptech.databinding.ActivityActivityTwoBinding;
 
@@ -46,6 +48,13 @@ public class ActivityTwo extends AppCompatActivity {
                         mBinding.textView3.append("OnNext: " + aDouble + "\n");
                     }
                 });
+        mBinding.nextActivityButtonTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityTwo.this, ActivityThree.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
